@@ -5,13 +5,37 @@ body {
   background: rgb(135, 133, 145);
   background: linear-gradient(120deg, rgba(135, 133, 145, 1) 3%, rgba(150, 214, 201, 1) 20%, rgba(215, 221, 220, 1) 47%, rgba(138, 204, 192, 1) 71%, rgba(255, 255, 255, 1) 94%, rgba(192, 202, 201, 1) 100%);
 }
-
-.bg {
-  background-color: #50b996;
-  ;
+.text{
+  background-color: rgba(0,0,0, 0.4);
   color: white;
+  font-weight: normal;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 48%;
+  left: 13%;
+  width: 20%;
+  padding: 12px;
+ 
 }
-.image img{
+.text span{
+  font-size: 14px;
+}
+.text p{
+  font-size: 11px;
+  font-weight: bold;
+}
+.bg {
+  /* background-color: #50b996; */
+  background-image:url('eade-business.gif') ;
+  background-repeat:repeat; 
+    background-size: cover;
+    height: 100%;
+    width: 105%;
+    filter: blur(2px);
+    color: white;
+    position: relative;
+}
+/* .image img{
   height: 100%;
   width: 100%;
 }
@@ -19,11 +43,11 @@ body {
     height: 48%;
     width: 88%;
 
-}
+} */
 
 .color {
   color: #50b996;
-  /* color: rgb(15, 48, 48); */
+
 }
 
 button {
@@ -91,7 +115,9 @@ button {
 .postion{
   position: relative;
 }
-
+button {
+  width: 50%;
+}
 button:hover {
   border: 1px solid #50b996;
   color: #50b996;
@@ -110,3 +136,98 @@ input:hover{
   width: 197px;
   border-radius: 5px;
 }
+.form{
+  position: relative;
+}
+.textbox{
+border: 1px solid #50b996;
+border-radius: 20px;
+outline: none;
+background: none;
+padding: 10px;
+color :black;
+width: 100%;
+height: 44px;
+}
+.form-label{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  cursor: text;
+  transition: 0.5s;
+  pointer-events: none;
+  font-size: 15px;
+  padding: 10px;
+}
+.textbox:focus + .form-label,.textbox:valid + .form-label{
+  top: 15%;
+  left: 25px;
+  color: #50b996;
+  padding: 3px;
+  font-size: 12x;
+  background: white;
+}
+/* .textbox:focus~ .form-label{
+  top: -0.1rem;
+  left: 1.9rem;
+  font-size: 12px;
+ color: #50b996;
+} */
+
+/* 
+.textbox2{
+  border: 1px solid #50b996;
+  border-radius: 20px;
+  outline: none;
+  background: none;
+  padding: 10px;
+  color :black;
+  width: 100%;
+  height: 36px;
+  }
+  .form-label2{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    cursor: text;
+    transition: 0.5s;
+    font-size: 15px;
+  }
+  .textbox2:focus + .form-label2,.textbox2:valid + .form-label2{
+    top: 0;
+    left: 25px;
+    color: #50b996;
+    padding: 3px;
+    font-size: 12x;
+    background: white;
+  }
+
+  .textbox2{
+    border: 1px solid #50b996;
+    border-radius: 20px;
+    outline: none;
+    background: none;
+    padding: 10px;
+    color :black;
+    width: 100%;
+    height: 36px;
+    }
+    .form-label2{
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      cursor: text;
+      transition: 0.5s;
+      font-size: 15px;
+    }
+    .textbox2:focus + .form-label2,.textbox2:valid + .form-label2{
+      top: 0;
+      left: 25px;
+      color: #50b996;
+      padding: 3px;
+      font-size: 12x;
+      background: white;
+    } */
