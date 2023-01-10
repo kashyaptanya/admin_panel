@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Image from '../componenets/pic.png'
+import { useDispatch } from 'react-redux';
+import {setUserData} from '../action/user';
 
 function Signup() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
     const [popup, setPopup] = useState(false)
     const [user, setUser] = useState({
         name: "",
@@ -16,6 +20,7 @@ function Signup() {
 
     const handle_button = (e) => {
         e.preventDefault()
+        dispatch(setUserData(user))
         setPopup(true)
 
         setTimeout(() => {
@@ -38,7 +43,9 @@ function Signup() {
                         <div className="col-md-4 bg p-5 rounded  ">
                             <h2 className="pt-5"> Welcome back!</h2>
                             <p>login with your personal info..</p>
+                            <div className='image'>
                             <img src={Image}></img>
+                            </div>
                         </div>
                         <div className="col-md-8 bg-white p-5 rounded postion">
                             <h2 className="color text-center">

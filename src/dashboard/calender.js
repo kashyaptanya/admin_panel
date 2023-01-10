@@ -1,9 +1,8 @@
 import { Calendar } from 'antd';
-import { Breadcrumb, Card, Layout } from 'antd';
+import { Breadcrumb, Layout } from 'antd';
 import Header from './setUp/header';
 import Footer from './setUp/footer';
 import Menu from './setUp/menu';
-import { Image } from 'antd';
 const { Content } = Layout;
 function Calender() {
 
@@ -14,7 +13,7 @@ function Calender() {
                 <Menu />
                 <Layout>
                     <Header />
-                    <ContentCallender />
+                    <ContentCalender />
                     <Footer />
                 </Layout>
             </Layout>
@@ -23,7 +22,7 @@ function Calender() {
 }
 export default Calender
 
-function ContentCallender() {
+function ContentCalender() {
     const onPanelChange = (value, mode) => {
         console.log(value.format('YYYY-MM-DD'), mode);
     };
@@ -35,7 +34,6 @@ function ContentCallender() {
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item>Calender</Breadcrumb.Item>
                 </Breadcrumb>
-
                 <Calendar onPanelChange={onPanelChange} />
             </Content>
         </>

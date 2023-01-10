@@ -1,6 +1,6 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
-import { LogoutOutlined, ContactsOutlined, PhoneOutlined, SlackOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
+import { LogoutOutlined, ContactsOutlined, PhoneOutlined, SlackOutlined,ProfileOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom";
 import { Typography } from 'antd';
 
@@ -40,6 +40,9 @@ function MenuCom() {
                     else if (key === "calender") {
                         navigate("/calender")
                     }
+                    else if (key === "profile") {
+                        navigate("/profile")
+                    }
                     else {
                         navigate("/user")
                     }
@@ -49,11 +52,15 @@ function MenuCom() {
 
                 items={[
                     <Title style={{ color: 'black' }} level={1}>SALESA</Title>,
+                    
                     {
-                        label: "SALESA"
+                        label: "SALESA"  
                     },
                     {
-                        label: "user", key: "/user", icon: <UserOutlined />,
+                        label: "User", key: "/user", icon: <UserOutlined />,
+                    },
+                    {
+                        label: "Profile", key: "profile", icon: <ProfileOutlined />,
                     },
                     {
                         label: "Contact us", key: "/contact", icon: <ContactsOutlined />,

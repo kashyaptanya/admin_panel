@@ -7,9 +7,13 @@ import Contact from './dashboard/contact';
 import Calender from './dashboard/calender';
 import About from './dashboard/about';
 import Term from './dashboard/term';
+import Profile from './dashboard/profile';
+import { Provider } from "react-redux"
+import store from './store';
+
 function App() {
   return (
-  <>
+  <Provider store={store}>
    <HashRouter>
       <Routes>
       <Route  path="/" element={<Signup/>} />
@@ -19,9 +23,10 @@ function App() {
       <Route  path="/calender" element={<Calender/>} />
       <Route  path="/about" element={<About/>} />
       <Route  path="/term" element={<Term/>} />
+      <Route  path="/profile" element={<Profile/>} />
       </Routes>
     </HashRouter> 
-  </>
+  </Provider>
   );
 }
 
