@@ -39,9 +39,7 @@ function Contentprofile() {
                 </Breadcrumb>
                 <div style={{ background: "#fff", minHeight: 432, padding:24 }} >
                 <Card title="Profile Details" bordered={false}>
-                <Form.Item label="Name" >
-                        <Input style={{ color: '#0c2e02' }} value={user_data.name}/>
-                    </Form.Item>
+              
                     <Form.Item label="Email">
                         <Input style={{ color: '#0c2e02' }} value={user_data.email}/>
                     </Form.Item>

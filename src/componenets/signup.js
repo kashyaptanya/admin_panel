@@ -11,7 +11,7 @@ function Signup() {
     const [popup, setPopup] = useState(false)
     const [user, setUser] = useState({
         name: "",
-        email: "",
+        email: "", 
         password: ""
     })
     const handlevalue = (e, key) => {
@@ -42,27 +42,30 @@ function Signup() {
                     </div>
                 </div> : null
             }
-            <div className="bg_color">
-                <div className="container">
-                    <div className="row p-5  ">
-                        <div className="col-md-4  rounded  ">
-                            <div className=" bg "></div>
-                            <div className="text">
+            {/* <div className="bg_color"> */}
+                <div className="container-fluid">
+                    <div className="row ">
+                        <div className="col-md-6  ">
+                            <div className=" bg ">
+                                <img src="https://wallpaperaccess.com/full/271965.jpg"></img>
+                            </div>
+                            {/* <div className="text">
                                 <h6 className="">"We have been using untitled to kick start every new project.." </h6><br></br>
                                 <span >Lorem John</span><br></br><span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
 
 
-                            </div>
+                            </div> */}
 
                         </div>
-                        <div className="col-md-8 bg-white p-5  rounded postion">
+                        <div className="col-md-6 bg-white  postion">
+                            <div className="child">
                             <h2 className="color text-center font-effect-shadow-multiple">
                                 Welcome back
                             </h2>
                             <p className="text-center">Welcome back ! please enter your details</p>
 
                             <form className="p-4 " onSubmit={handle_button} >
-
+{/* 
                                 <div className="form-group form p-2 mb-3 ">
                                     <input className=" textbox"
                                         required
@@ -72,7 +75,7 @@ function Signup() {
                                         placeholder=""
                                     />
                                     <label className="form-label">Name</label>
-                                </div>
+                                </div> */}
                                 <div className="form-group p-2 mb-3  form">
 
                                     <input className="textbox"
@@ -103,8 +106,9 @@ function Signup() {
                             </form>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
+            {/* </div> */}
         </>
     )
 }
