@@ -20,15 +20,14 @@ function Signup() {
 
         setTimeout(() => {
             navigate("/user")
-        }, "3000")
-
+        }, "2000")
     }
 
     return (
         <>
             {popup ?
-                <div class="toast show">
-                    <div class="toast-body">
+                <div className="toast show ">
+                    <div className="toast-body toast_style">
                         sign up successfully
                     </div>
                 </div> : null
@@ -41,13 +40,17 @@ function Signup() {
                             <p>login with your personal info..</p>
                             <img src={Image}></img>
                         </div>
-                        <div className="col-md-8 bg-white p-5 rounded">
+                        <div className="col-md-8 bg-white p-5 rounded postion">
                             <h2 className="color text-center">
                                 Create Account
                             </h2>
+                            <i class="fa-brands fa-facebook rotate"></i>
+                            <i class="fa-brands fa-github rotate2"></i>
+                            <i class="fa-brands fa-linkedin rotate3"></i>
+                            {/* <p className="rotate">login with your personal info..</p> */}
                             <form className="p-5" onSubmit={handle_button} >
+                                
                                 <div className="form-group p-2 text-secondary">
-
                                     <input className="form-control "
                                         required
                                         type="text"
@@ -67,7 +70,6 @@ function Signup() {
                                     />
                                 </div>
                                 <div className="form-group p-2 text-secondary">
-
                                     <input className="form-control"
                                         required
                                         type="password"
@@ -76,15 +78,13 @@ function Signup() {
                                         placeholder="Type your Password"
                                     />
                                 </div>
-                                <div className="button pt-5 text-center">
+                                <div className="pt-5 text-center">
                                     <button type="submit"
-                                        className="bg_button  rounded-pill">
+                                        className="rounded-pill">
                                         Sign up
                                     </button>
                                 </div>
-
                             </form>
-
                         </div>
                     </div>
                 </div>

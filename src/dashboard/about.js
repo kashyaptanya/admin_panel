@@ -30,6 +30,7 @@ function Contentgallery() {
         <>
             <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
+                <Breadcrumb.Item>Salesa</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item>About</Breadcrumb.Item>
                 </Breadcrumb>

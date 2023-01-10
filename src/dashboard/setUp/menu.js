@@ -8,6 +8,7 @@ const { Title } = Typography;
 const { Sider } = Layout;
 
 function MenuCom() {
+    
     const navigate = useNavigate()
 
     return (
