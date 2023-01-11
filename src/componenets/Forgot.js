@@ -1,16 +1,16 @@
 import { useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../action/user';
 
-function Signup() {
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+function ForgotPassword() {
 
     const [popup, setPopup] = useState(false)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [user, setUser] = useState({
-        email: "",
-        password: ""
+        email: ""
+
     })
     const handlevalue = (e, key) => {
         setUser({ ...user, [key]: e.target.value })
@@ -19,11 +19,16 @@ function Signup() {
     const handle_button = (e) => {
         e.preventDefault()
         dispatch(setUserData(user))
-        setPopup(true)
 
+        if (!email){
+            setPopup(true)
+        }
+      else{
         setTimeout(() => {
-            navigate("/user")
+            navigate("/Verify")
         }, "2000")
+      }
+       
     }
 
     return (
@@ -31,10 +36,11 @@ function Signup() {
             {popup ?
                 <div className="toast show ">
                     <div className="toast-body toast_style">
-                        Login Successfully
+                        Following fields are required : email
                     </div>
                 </div> : null
             }
+
             <div className="container-fluid">
                 <div className="row ">
                     <div className="col-md-6  ">
@@ -46,9 +52,9 @@ function Signup() {
                         <div className="postion">
                             <div className="child">
                                 <h2 className="color text-center font-effect-shadow-multiple">
-                                    Welcome back
+                                    Forgot Password
                                 </h2>
-                                <p className="text-center">Welcome back ! please enter your details</p>
+                                <p className="text-center">Enter the email associated with your account</p>
                                 <form className="p-2 " onSubmit={handle_button} >
                                     <div className="form-group p-2 mb-3  form">
                                         <input className="textbox"
@@ -60,26 +66,13 @@ function Signup() {
                                         />
                                         <label className="form-label">Email</label>
                                     </div>
-                                    <div className="form-group p-2 mb-3  form">
-                                        <input className="textbox"
-                                            required
-                                            type="password"
-                                            value={user.password}
-                                            onChange={(e) => handlevalue(e, 'password')}
-                                            placeholder=""
-                                        />
-                                        <label className="form-label">password</label>
-                                    </div>
                                     <div className="pt-3 text-center">
                                         <button type="submit"
                                             className="rounded-pill">
-                                            Log in
+                                            Next
                                         </button>
                                     </div>
                                 </form>
-                                <div className="text-center ">
-                                    <Link className="link" to="/ForgotPassword">Forgot Password</Link>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -88,4 +81,4 @@ function Signup() {
         </>
     )
 }
-export default Signup
+export default ForgotPassword

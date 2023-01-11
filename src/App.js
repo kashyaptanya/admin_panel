@@ -11,24 +11,30 @@ import Profile from './dashboard/profile';
 import { Provider } from "react-redux"
 import store from './store';
 import Data from './dashboard/data';
+import ForgotPassword from './componenets/Forgot';
+import Verify from './componenets/VerifyOTP';
+import ResetPassword from './componenets/reset';
 
 function App() {
   return (
-  <Provider store={store}>
-   <HashRouter>
-      <Routes>
-      <Route  path="/" element={<Signup/>} />
-      <Route  path="/user" element={<User/>} />
-      <Route  path="/gallery" element={<Gallery/>} />
-      <Route  path="/contact" element={<Contact/>} />
-      <Route  path="/calender" element={<Calender/>} />
-      <Route  path="/about" element={<About/>} />
-      <Route  path="/term" element={<Term/>} />
-      <Route  path="/profile" element={<Profile/>} />
-      <Route  path="/data" element={<Data/>} />
-      </Routes>
-    </HashRouter> 
-  </Provider>
+    <Provider store={store}>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Signup />} />
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
+          <Route path="/Verify" element={<Verify />} />
+          <Route path="/ResetPassword" element={<ResetPassword />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/calender" element={<Calender />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/term" element={<Term />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/data" element={<Data />} />
+        </Routes>
+      </HashRouter>
+    </Provider>
   );
 }
 
