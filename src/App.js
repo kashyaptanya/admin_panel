@@ -10,6 +10,7 @@ import Term from './dashboard/term';
 import Profile from './dashboard/profile';
 import { Provider } from "react-redux"
 import store from './store';
+import Data from './dashboard/data';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route  path="/about" element={<About/>} />
       <Route  path="/term" element={<Term/>} />
       <Route  path="/profile" element={<Profile/>} />
+      <Route  path="/data" element={<Data/>} />
       </Routes>
     </HashRouter> 
   </Provider>

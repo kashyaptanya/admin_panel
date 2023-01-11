@@ -1,9 +1,10 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
-import { LogoutOutlined, ContactsOutlined, PhoneOutlined, SlackOutlined,ProfileOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
+import logo from './logo.png'
+import { LogoutOutlined, ContactsOutlined, PhoneOutlined,DatabaseOutlined, SlackOutlined,ProfileOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom";
 import { Typography } from 'antd';
-
+import { Image } from 'antd';
 const { Title } = Typography;
 const { Sider } = Layout;
 
@@ -12,8 +13,16 @@ function MenuCom() {
     const navigate = useNavigate()
 
     return (
+        
         <Sider style={{ background: 'white' }}>
-            <Menu style={{ color: "#092b00" }}
+ {/* <Avatar src={<Image src="https://joeschmoe.io/api/v1/random" style={{ width: 32 }}  */}
+ <div style = {{display : "flex"}}> <div style = {{paddingTop :10, paddingLeft : 10}} >
+ <Image width={50}src={logo}
+  /></div>
+            <div style = {{padding :20}}>
+           <Title style={{ color: 'black'  }} level={3}>SALESA</Title></div></div>
+
+            <Menu style={{ color: "#0c2e02"  }}
 
                 onClick={({ key }) => {
                     if (key === "logout") {
@@ -43,6 +52,9 @@ function MenuCom() {
                     else if (key === "profile") {
                         navigate("/profile")
                     }
+                    else if (key === "data") {
+                        navigate("/data")
+                    }
                     else {
                         navigate("/user")
                     }
@@ -51,16 +63,11 @@ function MenuCom() {
 
 
                 items={[
-                    <Title style={{ color: 'black' }} level={1}>SALESA</Title>,
-                    
-                    {
-                        label: "SALESA"  
-                    },
                     {
                         label: "User", key: "/user", icon: <UserOutlined />,
                     },
                     {
-                        label: "Profile", key: "profile", icon: <ProfileOutlined />,
+                        label: "Profile Details", key: "profile", icon: <ProfileOutlined />,
                     },
                     {
                         label: "Contact us", key: "/contact", icon: <ContactsOutlined />,
@@ -78,6 +85,9 @@ function MenuCom() {
                     },
                     {
                         label: "Gallery", key: "gallery", icon: <SlackOutlined />
+                    },
+                    {
+                        label: "Data", key: "data", icon: <DatabaseOutlined />
                     },
                     {
                         label: "Calender", key: "calender", icon: <CalendarOutlined />

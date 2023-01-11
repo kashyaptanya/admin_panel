@@ -30,22 +30,24 @@ function Contentgallery() {
         <>
             <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Salesa</Breadcrumb.Item>
+                    <Breadcrumb.Item>Salesa</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item>Gallery</Breadcrumb.Item>
                 </Breadcrumb>
-                <div style={{ background: "#fff", padding: 24 }} >
-                    <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
-                </div>
-                <div style={{ background: "#fff", padding: 24 }} >
-                    <Image width={200} src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp" />
-                </div>
-                <div style={{ background: "#fff", padding: 24 }} >
-                    <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
-                </div>
+                <div style={{ display: "flex", minHeight: 440 }}>
+                    <div style={{ background: "#fff", padding: 24 }} >
+                        <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                    </div>
+                    <div style={{ background: "#fff", padding: 24 }} >
+                        <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                    </div>
+                    <div style={{ background: "#fff", padding: 24 }} >
+                        <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                    </div>
+                    <div style={{ background: "#fff", padding: 24 }} >
+                        <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                    </div>
 
-                <div style={{ background: "#fff", padding: 24 }} >
-                    <Image width={200} src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp" />
                 </div>
             </Content>
         </>

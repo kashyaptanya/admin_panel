@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import Image from '../componenets/pic.png'
 import { useDispatch } from 'react-redux';
-import {setUserData} from '../action/user';
+import { setUserData } from '../action/user';
+import {  Spin } from 'antd';
 
 function Signup() {
     const navigate = useNavigate()
@@ -21,16 +21,21 @@ function Signup() {
     const handle_button = (e) => {
         e.preventDefault()
         dispatch(setUserData(user))
+      
         setPopup(true)
+
 
         setTimeout(() => {
             navigate("/user")
         }, "2000")
     }
-
+    // const spin = () => {
+    //     <Spin />;
+    // }
+    // spin()
     return (
-        <>
-            {popup ?
+        <>   
+            {popup ?   
                 <div className="toast show ">
                     <div className="toast-body toast_style">
                         Login Successfully
@@ -39,30 +44,25 @@ function Signup() {
             }
             <div className="bg_color">
                 <div className="container">
-                    <div className="row p-5 ">
+                    <div className="row p-5  ">
                         <div className="col-md-4  rounded  ">
-                            <div className=" bg "></div>   
+                            <div className=" bg "></div>
                             <div className="text">
-                            <h6 className="">"We have been using untitled to kick start every new project.." </h6><br></br>
-                            <span >Lorem John</span><br></br><span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                         
-                            
+                                <h6 className="">"We have been using untitled to kick start every new project.." </h6><br></br>
+                                <span >Lorem John</span><br></br><span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+
+
                             </div>
-                            {/* <div className='image'>
-                            <img src={Image}></img>
-                            </div> */}
+
                         </div>
-                        <div className="col-md-8 bg-white p-5 rounded postion">
-                            <h2 className="color text-center">
+                        <div className="col-md-8 bg-white p-5  rounded postion">
+                            <h2 className="color text-center font-effect-shadow-multiple">
                                 Welcome back
                             </h2>
-                            <p className="text-center">Welcome back! please enter your details</p>
-                            {/* <i class="fa-brands fa-facebook rotate"></i>
-                            <i class="fa-brands fa-github rotate2"></i>
-                            <i class="fa-brands fa-linkedin rotate3"></i> */}
-                            {/* <p className="rotate">login with your personal info..</p> */}
+                            <p className="text-center">Welcome back ! please enter your details</p>
+
                             <form className="p-4 " onSubmit={handle_button} >
-                                
+
                                 <div className="form-group form p-2 mb-3 ">
                                     <input className=" textbox"
                                         required
@@ -97,7 +97,7 @@ function Signup() {
                                 <div className="pt-3 text-center">
                                     <button type="submit"
                                         className="rounded-pill">
-                                        Sign up
+                                        Log in
                                     </button>
                                 </div>
                             </form>
