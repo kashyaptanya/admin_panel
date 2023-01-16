@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
 function Verify() {
@@ -10,16 +11,36 @@ function Verify() {
         otp3: "",
         otp4: "",
     })
+   
     const handlevalue = (e, key) => {
         setOTP({ ...OTP, [key]: e.target.value })
     }
-
-    const handle_button = (e) => {
+   
+    const handle_button = async(e) => {
         e.preventDefault()
-        setPopup(true)
-        setTimeout(() => {
-            navigate("/ResetPassword")
-        }, "3000")
+        const otp = {
+            otp:OTP.otp1 + OTP.otp2 + OTP.otp3 + OTP.otp4
+        }
+        localStorage.setItem("users_OTP", otp.otp)
+       let userData= localStorage.getItem("users_email")
+    
+       
+        let payload = {
+            otp : parseInt(OTP.otp1 + OTP.otp2 + OTP.otp3 + OTP.otp4),
+            email: userData
+        }
+        console.log("payload",payload)
+        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/verify_otp",payload);
+        console.log("result",result.data.status)
+       
+        if(result.data.status==true){
+            setPopup(true)
+ setTimeout(() => {
+    navigate("/ResetPassword")
+ },2000);         
+            
+        }
+      
     }
 
     return (

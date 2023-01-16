@@ -30,12 +30,15 @@ function Signup() {
         let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/login",payload);
         console.log("result",result.data.status)
         // dispatch(setUserData(user))
-        setPopup(true)
+        
 //  if(result.status)
 if (result.data.status==true){
-    setTimeout(() => {
+    setPopup(true)
         navigate("/user")
-    }, "2000")  
+    
+}
+else{
+    console.log("something wrong")
 }
         
     }

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import axios from "axios"
 
 function ResetPassword() {
 
@@ -13,12 +14,26 @@ function ResetPassword() {
         setUser({ ...user, [key]: e.target.value })
     }
 
-    const handle_button = (e) => {
+    const handle_button = async(e) => {
         e.preventDefault()
+        let userData= localStorage.getItem("users_email")
+        let userotp= localStorage.getItem("users_OTP")
+
+        let payload = {
+            otp : userotp,
+            email: userData,
+            password:user.password
+        }
+       
         if (user.password === user.pass) {
-            setTimeout(() => {
-                navigate("/user")
-            }, "2000")
+            let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/reset_password",payload);
+            if(result.data.status==true){
+                navigate("/")
+            }
+            else{
+                return
+            }
+           
         }
         else {
             setPopup(true)
