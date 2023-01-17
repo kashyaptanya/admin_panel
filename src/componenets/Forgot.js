@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../action/user';
+import axios from "axios";
 
 function ForgotPassword() {
 
@@ -15,13 +16,21 @@ function ForgotPassword() {
         setUser({ ...user, [key]: e.target.value })
     }
 
-    const handle_button = (e) => {
+    const handle_button = async(e) => {
         e.preventDefault()
-        dispatch(setUserData(user))
+         let payload ={
+            email:user.email,
+        }
+         let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/forget_password",payload);
+        console.log("result",result)
+        // dispatch(setUserData(user))
         setPopup(true)
-        setTimeout(() => {
-            navigate("/Verify")
-        }, "2000")
+        if (result.data.status == true){
+            setTimeout(() => {
+                navigate("/Verify")
+            }, "2000")
+        }
+       
     }
 
     return (

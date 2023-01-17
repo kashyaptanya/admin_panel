@@ -36,10 +36,10 @@ function Contentprofile() {
                 <div style={{ background: "#fff", minHeight: 432, padding:24 }} >
                 <Card title="Profile Details" bordered={false}>
                     <Form.Item label="Email">
-                        <Input style={{ color: '#0c2e02' }} value={user_data.email}/>
+                        {/* <Input style={{ color: '#0c2e02' }} value={user_data.email}/> */}
                     </Form.Item>
                     <Form.Item label="Password" >
-                        <Input style={{ color: '#0c2e02' }} value={user_data.password}/>
+                        {/* <Input style={{ color: '#0c2e02' }} value={user_data.password}/> */}
                     </Form.Item>
                     </Card>
                 </div>
