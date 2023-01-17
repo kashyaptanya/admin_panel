@@ -26,15 +26,13 @@ function Data() {
 export default Data;
 
 function Contentdata() {
-
-
     return (
         <>
             <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Salesa</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-                    <Breadcrumb.Item>Gallery</Breadcrumb.Item>
+                    <Breadcrumb.Item>Data</Breadcrumb.Item>
                 </Breadcrumb>
                 <div style={{ background: "#fff", minHeight: 432, padding: 24 }}>
                     <Row gutter={16} >

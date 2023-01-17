@@ -10,7 +10,6 @@ function ForgotPassword() {
     const navigate = useNavigate()
     const [user, setUser] = useState({
         email: ""
-
     })
     const handlevalue = (e, key) => {
         setUser({ ...user, [key]: e.target.value })
@@ -19,16 +18,10 @@ function ForgotPassword() {
     const handle_button = (e) => {
         e.preventDefault()
         dispatch(setUserData(user))
-
-        if (!email){
-            setPopup(true)
-        }
-      else{
+        setPopup(true)
         setTimeout(() => {
             navigate("/Verify")
         }, "2000")
-      }
-       
     }
 
     return (
@@ -36,7 +29,7 @@ function ForgotPassword() {
             {popup ?
                 <div className="toast show ">
                     <div className="toast-body toast_style">
-                        Following fields are required : email
+                        Processing....!
                     </div>
                 </div> : null
             }

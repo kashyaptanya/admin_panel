@@ -1,7 +1,7 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
 import logo from './logo.png'
-import { LogoutOutlined, ContactsOutlined, PhoneOutlined,DatabaseOutlined, SlackOutlined,ProfileOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
+import { LogoutOutlined, ContactsOutlined, PhoneOutlined, DatabaseOutlined, SlackOutlined, ProfileOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom";
 import { Typography } from 'antd';
 import { Image } from 'antd';
@@ -9,27 +9,27 @@ const { Title } = Typography;
 const { Sider } = Layout;
 
 function MenuCom() {
-    
+
     const navigate = useNavigate()
 
     return (
-        
-        <Sider style={{ background: 'white' }}>
- {/* <Avatar src={<Image src="https://joeschmoe.io/api/v1/random" style={{ width: 32 }}  */}
- <div style = {{display : "flex"}}> <div style = {{paddingTop :10, paddingLeft : 10}} >
- <Image width={50}src={logo}
-  /></div>
-            <div style = {{padding :20}}>
-           <Title style={{ color: 'black'  }} level={3}>SALESA</Title></div></div>
 
-            <Menu style={{ color: "#0c2e02"  }}
+        <Sider style={{ background: 'white' }}>
+            {/* <Avatar src={<Image src="https://joeschmoe.io/api/v1/random" style={{ width: 32 }}  */}
+            <div style={{ display: "flex" }}>
+                <div style={{ paddingTop: 10, paddingLeft: 10 }} >
+                    <Image width={50} src={logo}
+                    /></div>
+                <div style={{ padding: 20 }}>
+                    <Title style={{ color: 'black' }} level={3}>SALESA</Title></div>
+            </div>
+            <Menu style={{ color: "#0c2e02" }}
 
                 onClick={({ key }) => {
                     if (key === "logout") {
                         setTimeout(() => {
                             navigate("/")
                         }, 1000);
-
                     }
                     else if (key === "mobile") {
                         navigate("/contact")
@@ -60,8 +60,6 @@ function MenuCom() {
                     }
                 }}
                 mode="inline"
-
-
                 items={[
                     {
                         label: "User", key: "/user", icon: <UserOutlined />,

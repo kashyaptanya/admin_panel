@@ -2,14 +2,12 @@ import { Breadcrumb, Card, Layout } from 'antd';
 import Header from './setUp/header';
 import Footer from './setUp/footer';
 import Menu from './setUp/menu';
-import { Image } from 'antd';
 const { Content } = Layout;
 
 function About() {
 
     return (
         <>
-
             <Layout>
                 <Menu />
                 <Layout>

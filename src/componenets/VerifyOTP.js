@@ -19,7 +19,7 @@ function Verify() {
         setPopup(true)
         setTimeout(() => {
             navigate("/ResetPassword")
-        }, "2000")
+        }, "3000")
     }
 
     return (

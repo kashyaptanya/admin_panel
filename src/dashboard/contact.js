@@ -2,7 +2,6 @@ import { Breadcrumb, Card, Layout } from 'antd';
 import Header from './setUp/header';
 import Footer from './setUp/footer';
 import Menu from './setUp/menu';
-import { Image } from 'antd';
 import { Divider, Radio, Table } from 'antd';
 import { useState } from 'react';
 const { Content } = Layout;
@@ -11,7 +10,6 @@ function Contact() {
 
     return (
         <>
-
             <Layout>
                 <Menu />
                 <Layout>

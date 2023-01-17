@@ -8,7 +8,6 @@ function User() {
 
     return (
         <>
-
             <Layout>
                 <Menu />
                 <Layout>

@@ -9,7 +9,6 @@ const { Content } = Layout;
 function Profile() {
     return (
         <>
-
             <Layout>
                 <Menu />
                 <Layout>
@@ -25,10 +24,7 @@ function Profile() {
 export default Profile;
 
 function Contentprofile() {
-
     let { user_data } = useSelector((state) => state.users)
-
-
     return (
         <>
             <Content style={{ padding: '0 50px' }}>
@@ -39,7 +35,6 @@ function Contentprofile() {
                 </Breadcrumb>
                 <div style={{ background: "#fff", minHeight: 432, padding:24 }} >
                 <Card title="Profile Details" bordered={false}>
-              
                     <Form.Item label="Email">
                         <Input style={{ color: '#0c2e02' }} value={user_data.email}/>
                     </Form.Item>
@@ -47,7 +42,6 @@ function Contentprofile() {
                         <Input style={{ color: '#0c2e02' }} value={user_data.password}/>
                     </Form.Item>
                     </Card>
-                   
                 </div>
             </Content>
         </>

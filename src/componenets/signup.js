@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../action/user';
+import axios from "axios";
 
 function Signup() {
     const navigate = useNavigate()
@@ -16,16 +17,28 @@ function Signup() {
         setUser({ ...user, [key]: e.target.value })
     }
 
-    const handle_button = (e) => {
+    const handle_button = async (e) => {
+        console.log("user",user)
         e.preventDefault()
-        dispatch(setUserData(user))
+        let payload ={
+            email:user.email,
+            password:user.password,
+            fcm_token:"fcm_5000",
+            device_id:"device_1234",
+            os:"android"
+        }
+        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/login",payload);
+        console.log("result",result)
+        // dispatch(setUserData(user))
         setPopup(true)
 
-        setTimeout(() => {
-            navigate("/user")
-        }, "2000")
+        // setTimeout(() => {
+        //     navigate("/user")
+        // }, "2000")  
     }
 
+    
+    
     return (
         <>
             {popup ?

@@ -8,7 +8,6 @@ function Term() {
 
     return (
         <>
-
             <Layout>
                 <Menu />
                 <Layout>

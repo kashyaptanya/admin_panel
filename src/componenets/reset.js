@@ -43,8 +43,6 @@ function ResetPassword() {
                         <div className=" bg ">
                             <img src="https://wallpaperaccess.com/full/271965.jpg"></img>
                         </div>
-
-
                     </div>
                     <div className="col-md-6 bg-white ">
                         <div className="postion">
@@ -53,9 +51,7 @@ function ResetPassword() {
                                     Reset Password
                                 </h2>
                                 <p className="text-center">Please create a new password </p>
-
                                 <form className="p-2 " onSubmit={handle_button} >
-
                                     <div className="form-group p-2 mb-3  form">
                                         <input className="textbox"
                                             required
@@ -75,9 +71,7 @@ function ResetPassword() {
                                             placeholder=""
                                         />
                                         <label className="form-label">Confirm password</label>
-
                                     </div>
-
                                     <div className="pt-3 text-center">
                                         <button type="submit"
                                             className="rounded-pill">
@@ -86,8 +80,8 @@ function ResetPassword() {
                                     </div>
                                 </form>
                             </div>
-
-                        </div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
