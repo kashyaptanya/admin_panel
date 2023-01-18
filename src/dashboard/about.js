@@ -33,7 +33,7 @@ function Contentgallery() {
                     <Breadcrumb.Item>About</Breadcrumb.Item>
                 </Breadcrumb>
 
-                <div className="site-layout-content" style={{ background: "#fff", padding: 24, minHeight: 450 }}>
+                <div className="site-layout-content" style={{ background: "#fff", padding: 24, minHeight: 430 }}>
                     <Card title="About us" bordered={false}>
                         <p>   Every business has a story to tell. Even if you’re running a startup with a brief history, you’ll want to share your company’s progress. Talk about how you got to where you are today on your about page.
                         </p>

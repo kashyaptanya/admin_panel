@@ -27,7 +27,9 @@ function ResetPassword() {
        
         if (user.password === user.pass) {
             let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/reset_password",payload);
+         console.log("result",result.data.status)
             if(result.data.status==true){
+                localStorage.removeItem("users_OTP")
                 navigate("/")
             }
             else{

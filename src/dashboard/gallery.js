@@ -34,7 +34,7 @@ function Contentgallery() {
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item>Gallery</Breadcrumb.Item>
                 </Breadcrumb>
-                <div style={{ display: "flex", minHeight: 440 }}>
+                <div style={{ display: "flex", minHeight: 430 }}>
                     <div style={{ background: "#fff", padding: 24 }} >
                         <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
                     </div>

@@ -5,42 +5,44 @@ import { useNavigate } from "react-router-dom"
 function Verify() {
     const [popup, setPopup] = useState(false)
     const navigate = useNavigate()
-    const [OTP, setOTP] = useState({
+    const [OTP, setOTP] = useState({    
         otp1: "",
         otp2: "",
         otp3: "",
         otp4: "",
     })
-   
+
     const handlevalue = (e, key) => {
         setOTP({ ...OTP, [key]: e.target.value })
     }
-   
-    const handle_button = async(e) => {
+
+    const handle_button = async (e) => {
+        localStorage.removeItem("users_password")
         e.preventDefault()
         const otp = {
-            otp:OTP.otp1 + OTP.otp2 + OTP.otp3 + OTP.otp4
+            otp: OTP.otp1 + OTP.otp2 + OTP.otp3 + OTP.otp4
         }
-        localStorage.setItem("users_OTP", otp.otp)
-       let userData= localStorage.getItem("users_email")
-    
-       
+        let userData = localStorage.getItem("users_email")
+
+
         let payload = {
-            otp : parseInt(OTP.otp1 + OTP.otp2 + OTP.otp3 + OTP.otp4),
+            otp: parseInt(OTP.otp1 + OTP.otp2 + OTP.otp3 + OTP.otp4),
             email: userData
         }
-        console.log("payload",payload)
-        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/verify_otp",payload);
-        console.log("result",result.data.status)
-       
-        if(result.data.status==true){
+        console.log("payload", payload)
+        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/verify_otp", payload);
+        console.log("result", result.data.status)
+
+        if (result.data.status == true) {
+        localStorage.setItem("users_OTP", otp.otp)
+
             setPopup(true)
- setTimeout(() => {
-    navigate("/ResetPassword")
- },2000);         
             
+            setTimeout(() => {
+                navigate("/ResetPassword")
+            }, 2000);
+
         }
-      
     }
 
     return (

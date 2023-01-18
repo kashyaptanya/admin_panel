@@ -18,29 +18,36 @@ function Signup() {
     }
 
     const handle_button = async (e) => {
-        console.log("user",user)
-        e.preventDefault()
-        let payload ={
-            email:user.email,
-            password:user.password,
-            fcm_token:"fcm_5000",
-            device_id:"device_1234",
-            os:"android"
+        console.log("user", user)
+        const passwordObj = {
+            password: user.password
         }
-        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/login",payload);
-        console.log("result",result.data.status)
+        const email = {
+            email :user.email
+        }
+      
+        e.preventDefault()
+        localStorage.removeItem("users_OTP")
+        let payload = {
+            email: user.email,
+            password: user.password,
+            fcm_token: "fcm_5000",
+            device_id: "device_1234",
+            os: "android"
+        }
+        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/login", payload);
+        console.log("result", result.data)
         // dispatch(setUserData(user))
-        
-//  if(result.status)
-if (result.data.status==true){
-    setPopup(true)
-        navigate("/user")
-    
-}
-else{
-    console.log("something wrong")
-}
-        
+        setPopup(true)
+       
+        if (result.data.status === true) {
+            localStorage.setItem("users_email", email.email)
+            localStorage.setItem("users_password", passwordObj.password)
+            localStorage.setItem("token",result.data.data.token)
+            setTimeout(() => {
+                navigate("/user")
+            }, "2000")
+        }
     }
 
     return (

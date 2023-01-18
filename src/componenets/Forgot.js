@@ -5,7 +5,7 @@ import { setUserData } from '../action/user';
 import axios from "axios";
 
 function ForgotPassword() {
-    
+
     const [popup, setPopup] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -18,25 +18,24 @@ function ForgotPassword() {
 
     const handle_button = async (e) => {
         e.preventDefault()
-       
-         const emailObj = {
+        localStorage.removeItem("users_OTP")
+        const emailObj = {
             email: user.email
         }
-    
+
         localStorage.setItem("users_email", emailObj.email)
         const payload = {
             email: user.email,
         }
 
         const result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/forget_password", payload);
-        console.log("result", result)
+        console.log("result", result.data.status)
 
         // dispatch(setUserData(user))
-       
+
         if (result.data.status == true) {
             setPopup(true)
             setTimeout(() => {
-
                 navigate("/Verify")
             }, "2000")
         }

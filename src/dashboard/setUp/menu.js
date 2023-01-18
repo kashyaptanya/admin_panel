@@ -5,12 +5,24 @@ import { LogoutOutlined, ContactsOutlined, PhoneOutlined, DatabaseOutlined, Slac
 import { useNavigate } from "react-router-dom";
 import { Typography } from 'antd';
 import { Image } from 'antd';
+import axios from 'axios';
 const { Title } = Typography;
 const { Sider } = Layout;
 
 function MenuCom() {
 
     const navigate = useNavigate()
+    let payload = {
+        device_id:"6D0FA124-00D2-4217-8730-59F1102F1353",
+        admin_id:"6384a9abe84dfb95611d012d"
+    }
+    const data =async ()=>{
+        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/logout", payload);
+        console.log("result", result.data.status)
+        if(result.data.status){
+            navigate("/")
+        }
+    }
 
     return (
 
@@ -26,10 +38,15 @@ function MenuCom() {
             <Menu style={{ color: "#0c2e02" }}
 
                 onClick={({ key }) => {
+   
                     if (key === "logout") {
-                        setTimeout(() => {
-                            navigate("/")
-                        }, 1000);
+                        data()
+               
+        
+
+                        // setTimeout(() => {
+                        //     navigate("/")
+                        // }, 1000);
                     }
                     else if (key === "mobile") {
                         navigate("/contact")
