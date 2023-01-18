@@ -118,7 +118,7 @@ function ContentContact() {
 
     return (
         <>
-            <Content style={{ padding: '0 50px' }}>
+            <Content style={{ padding: '0 50px',minWidth:500 }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Salesa</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
@@ -126,7 +126,7 @@ function ContentContact() {
                 </Breadcrumb>
                 <div>
                     <Divider />
-                    <Table
+                    <Table style={{minWidth: 500}}
                         rowSelection={{
                             type: selectionType,
                             ...rowSelection,

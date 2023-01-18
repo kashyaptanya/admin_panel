@@ -26,8 +26,8 @@ function ContentCom() {
 
     return (
         <>
-            <Content style={{ padding: '0 50px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
+            <Content style={{ padding: '0 50px' ,minWidth:500 }}>
+                <Breadcrumb style={{ margin: '16px 0' ,minWidth:500 }}>
                     <Breadcrumb.Item>Salesa</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item>User</Breadcrumb.Item>

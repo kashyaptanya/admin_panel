@@ -1,7 +1,7 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
 import logo from './logo.png'
-import { LogoutOutlined, ContactsOutlined, PhoneOutlined, DatabaseOutlined, SlackOutlined, ProfileOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
+import { LogoutOutlined, ContactsOutlined, PhoneOutlined,LockOutlined,SolutionOutlined, DatabaseOutlined, SlackOutlined, ProfileOutlined, CalendarOutlined, ChromeOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom";
 import { Typography } from 'antd';
 import { Image } from 'antd';
@@ -66,11 +66,17 @@ function MenuCom() {
                     else if (key === "calender") {
                         navigate("/calender")
                     }
+                    else if (key === "list") {
+                        navigate("/list")
+                    }
                     else if (key === "profile") {
                         navigate("/profile")
                     }
                     else if (key === "data") {
                         navigate("/data")
+                    }
+                    else if (key === "policy") {
+                        navigate("/policy")
                     }
                     else {
                         navigate("/user")
@@ -108,7 +114,13 @@ function MenuCom() {
                         label: "Calender", key: "calender", icon: <CalendarOutlined />
                     },
                     {
+                        label: "Data list", key: "list", icon: <SolutionOutlined />
+                    },
+                    {
                         label: "Terms & Conditions", key: "term", icon: <ExclamationCircleOutlined />
+                    },
+                    {
+                        label: "Privacy & Policy", key: "policy", icon: <LockOutlined />
                     },
                     {
                         label: "Logout", key: "logout", danger: true, icon: <LogoutOutlined />

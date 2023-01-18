@@ -14,6 +14,8 @@ import Data from './dashboard/data';
 import ForgotPassword from './componenets/Forgot';
 import Verify from './componenets/VerifyOTP';
 import ResetPassword from './componenets/reset';
+import Datalist from './dashboard/datalist';
+import Policy from './dashboard/privacy';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/term" element={<Term />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/data" element={<Data />} />
+          <Route path="/list" element={<Datalist />} />
+          <Route path="/policy" element={<Policy />} />
         </Routes>
       </HashRouter>
     </Provider>

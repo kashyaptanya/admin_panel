@@ -4,7 +4,7 @@ const { Footer, } = Layout;
 function FooterCom() {
     return (
         <Layout>
-            <Footer style={{ textAlign: "center" }}>Design & Develop . © Copyright 2022 by My APP</Footer>
+            <Footer style={{ textAlign: "center" ,minWidth:500 }}>Design & Develop . © Copyright 2022 by My APP</Footer>
         </Layout>
     )
 }

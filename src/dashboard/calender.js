@@ -27,7 +27,7 @@ function ContentCalender() {
     };
     return (
         <>
-            <Content style={{ padding: '0 50px' }}>
+            <Content style={{ padding: '0 50px',minWidth:500 }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Salesa</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>

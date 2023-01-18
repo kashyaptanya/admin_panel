@@ -8,7 +8,7 @@ import axios from 'axios';
 const { TextArea } = Input;
 const { Content } = Layout;
 
-function Term() {
+function Policy() {
 
     return (
         <>
@@ -16,7 +16,7 @@ function Term() {
                 <Menu />
                 <Layout>
                     <Header />
-                    <Contentterm />
+                    <Contentpolicy />
                     <Footer />
                 </Layout>
             </Layout>
@@ -24,27 +24,27 @@ function Term() {
     )
 }
 
-export default Term;
+export default Policy;
 
-function Contentterm() {
+function Contentpolicy() {
     const[value,setvalue]= useState("")
  
     const getdata= async()=>{
-        let apiHit = await axios.get("https://frontlineapi.solidappmaker.ml/api/v1/admin_setting/get_terms_and_condition")
-       console.log("api",apiHit.data.data.terms_and_condition)
-       setvalue(apiHit.data.data.terms_and_condition)
+        let apiHit = await axios.get("https://frontlineapi.solidappmaker.ml/api/v1/admin_setting/get_privacy_policy")
+       console.log("api",apiHit.data.data.privacy_policy)
+       setvalue(apiHit.data.data.privacy_policy)
        if (apiHit.data.status===true){
-        localStorage.setItem("terms",apiHit.data.data.terms_and_condition)
-
+        localStorage.setItem("policy",apiHit.data.data.privacy_policy)
        }
     }  
+   
     const update= async()=>{
         let token = localStorage.getItem("token")
         let policy = localStorage.getItem("policy")
         let terms  = localStorage.getItem("terms")
         const payload = {
-            privacy_policy:policy,
-            terms_and_condition: value
+            privacy_policy:value,
+            terms_and_condition: terms
 
         }
 
@@ -56,9 +56,6 @@ function Contentterm() {
        });
         
     }
-    // const update=()=>{
-
-    // }
 
     useEffect(()=>{
 getdata()
@@ -69,11 +66,11 @@ getdata()
                 <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item>Salesa</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-                    <Breadcrumb.Item>Term</Breadcrumb.Item>
+                    <Breadcrumb.Item>Privacy & Policy</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="site-layout-content" style={{ background: "#fff", padding: 24, minHeight: 430 }}>
                 
-                    <Card title="Terms & Conditions" bordered={false}>
+                    <Card title="Privacy & Policy" bordered={false}>
                     <TextArea  style ={{height:200 , background:"rgba(206, 204, 204, 0.986)"}}rows={4} value={value}  onChange={(e) =>setvalue(e.target.value)}/>
                  
                    <Button style={{ width: 100 ,background: '#50b996' , color:"#fff" ,marginTop:10 }} onClick={update}>Update</Button>

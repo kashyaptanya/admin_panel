@@ -121,5 +121,6 @@ input:hover {
 .link {
   text-decoration: none;
   color: black;
+  /* color: rgba(206, 204, 204, 0.986); */
   font-size: 12px;
 }

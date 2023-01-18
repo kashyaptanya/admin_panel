@@ -10,7 +10,7 @@ function HeaderCom() {
   let userData = localStorage.getItem("users_email")
   return (
     <>
-      <Header style={{ background: '#50b996', padding: 22, height: 80 }}>
+      <Header style={{ background: '#50b996', padding: 22, height: 80 , minWidth:550 }}>
         <Tooltip title={userData}>
           <Avatar className={Style.thestyle} style={{ color: '#50b996', fontWeight: 'bold', backgroundColor: '#ffffff', float: 'right' }} >
             {  userData[0].toUpperCase()  }
@@ -18,7 +18,7 @@ function HeaderCom() {
         </Tooltip>
 
 
-        <Search placeholder="input search text" allowClear style={{ width: 200, }} />
+        {/* <Search placeholder="input search text" allowClear style={{ width: 200, }} /> */}
       </Header>
     </>
   )
