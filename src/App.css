@@ -105,8 +105,10 @@ input:hover {
   background: white;
 }
 
+
 .thestyle:hover {
   background-color: #4e5599;
+  color : #995796
 }
 
 .thestyle {

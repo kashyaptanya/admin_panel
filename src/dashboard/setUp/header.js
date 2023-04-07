@@ -13,12 +13,11 @@ function HeaderCom() {
       <Header style={{ background: '#50b996', padding: 22, height: 80 , minWidth:550 }}>
         <Tooltip title={userData}>
           <Avatar className={Style.thestyle} style={{ color: '#50b996', fontWeight: 'bold', backgroundColor: '#ffffff', float: 'right' }} >
-            {  userData[0].toUpperCase()  }
+            {/* {  userData[0].toUpperCase()  } */}
           </Avatar>
         </Tooltip>
 
 
-        {/* <Search placeholder="input search text" allowClear style={{ width: 200, }} /> */}
       </Header>
     </>
   )

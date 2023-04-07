@@ -35,19 +35,19 @@ function Signup() {
             device_id: "device_1234",
             os: "android"
         }
-        let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/login", payload);
-        console.log("result", result.data)
+        // let result = await axios.post("https://frontlineapi.solidappmaker.ml/api/v1/admin/login", payload);
+        // console.log("result", result.data)
         // dispatch(setUserData(user))
         setPopup(true)
        
-        if (result.data.status === true) {
-            localStorage.setItem("users_email", email.email)
-            localStorage.setItem("users_password", passwordObj.password)
-            localStorage.setItem("token",result.data.data.token)
+        // if (result.data.status === true) {
+            // localStorage.setItem("users_email", email.email)
+            // localStorage.setItem("users_password", passwordObj.password)
+            // localStorage.setItem("token",result.data.data.token)
             setTimeout(() => {
                 navigate("/user")
             }, "2000")
-        }
+        // }
     }
 
     return (

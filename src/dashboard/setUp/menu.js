@@ -29,7 +29,7 @@ function MenuCom() {
         <Sider style={{ background: 'white' }}>
             {/* <Avatar src={<Image src="https://joeschmoe.io/api/v1/random" style={{ width: 32 }}  */}
             <div style={{ display: "flex" }}>
-                <div style={{ paddingTop: 10, paddingLeft: 10 }} >
+                <div style={{ paddingTop: 10, paddingLeft: 10  }} >
                     <Image width={50} src={logo}
                     /></div>
                 <div style={{ padding: 20 }}>
